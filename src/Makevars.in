@@ -1,0 +1,28 @@
+#################################################################
+RNACI_CPPFLAGS = `$(R_HOME)/bin/Rscript -e "RNACI:::cppflags()"`
+RNACI_LDFLAGS = `$(R_HOME)/bin/Rscript -e "RNACI:::ldflags()"`
+
+PKG_CPPFLAGS = $(RNACI_CPPFLAGS)
+PKG_CFLAGS = -g -w
+PKG_LIBS = $(RNACI_LDFLAGS)
+
+
+MEMINFO_OBJS = \
+		merkhet/platform.o \
+        merkhet/procinfo.o \
+        merkhet/sysinfo.o
+
+R_OBJS   = wrappers.o
+
+OBJECTS = $(MEMINFO_OBJS) $(R_OBJS)
+
+### Start making here.
+all: $(SHLIB)
+
+$(SHLIB): $(OBJECTS)
+
+clean:
+		@rm -rf *.o *.d *.rc *.so* *.dylib *.dll *.a *.lib \
+				Makedeps Makevars $(SHLIB) $(OBJECTS) $(ROBJECTS)
+
+
