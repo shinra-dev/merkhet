@@ -167,9 +167,9 @@ Sys.runtime <- function()
 #' @export
 post.system.time <- function()
 {
-  usr <- Sys.usrtime()
-  sys <- Sys.systime()
-  elapsed <- Sys.runtime()
+  usr <- .Call(R_merkhet_process_usrtime)
+  sys <- .Call(R_merkhet_process_systime)
+  elapsed <- .Call(R_merkhet_process_runtime)
   
   ret <- c(usr, sys, elapsed)
   names(ret) <- c("user.self", "sys.self", "elapsed")
