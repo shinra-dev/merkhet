@@ -10,18 +10,14 @@ PKG_CFLAGS = -w
 PKG_LIBS = $(RNACI_LDFLAGS) -lpsapi
 
 
-MEMINFO_OBJS = \
-		meminfo/src/cacheinfo.o \
-		meminfo/src/fileinfo.o \
-		meminfo/src/platform.o \
-		meminfo/src/procinfo.o \
-		meminfo/src/raminfo.o \
-		meminfo/src/swapinfo.o \
-		meminfo/src/sysinfo.o
+MERKHET_OBJS = \
+		merkhet/platform.o \
+		merkhet/procinfo.o \
+		merkhet/sysinfo.o
 
 R_OBJS   = wrappers.o
 
-OBJECTS = $(MEMINFO_OBJS) $(R_OBJS)
+OBJECTS = $(MERKHET_OBJS) $(R_OBJS)
 
 ### Start making here.
 all: $(SHLIB)
