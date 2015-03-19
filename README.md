@@ -1,25 +1,43 @@
 # merkeht [![Build Status](https://travis-ci.org/shinra-dev/merkhet.png)](https://travis-ci.org/shinra-dev/merkhet) [![License](http://img.shields.io/badge/license-BSD%202--Clause-orange.svg?style=flat)](http://opensource.org/licenses/BSD-2-Clause)
 
-My brain hates staring at large numbers, and scientific
-notation isn't always how I want to think about orders of magnitude.
-That's why I added the approximate sizer:
+
+## Package Utilities
+
+#### Run Times
+
+System uptime:
 
 ```r
-approx.size(12345)
-# 12.3 Thousand
- 
-approx.size(123456789)
-# 123.5 Million
- 
-approx.size(123456789, unit.names="short")
-# 123.5m
- 
-approx.size(123456789, unit.names="comma")
-# 123,456,789
+Sys.uptime()
+# 1.853 days 
+```
+
+There are also some utilities for seeing how long the current R
+process has been running (by the various standard measures):
+
+```r
+Sys.runtime()
+# 10.34 seconds 
+Sys.usrtime()
+# 0.39 seconds 
+Sys.systime()
+# 0.38 seconds 
+```
+
+These three utilities combined allow you to do something akin to a
+post-hoc `system.time()`:
+
+```r
+post.system.time()
+#    user  system elapsed 
+#    0.42    0.38   17.34 
 ```
 
 
-I also hate staring at timings in seconds.  I don't got all day
+
+#### Readable Timings
+
+I hate staring at timings in seconds.  I don't got all day
 to be dividing by WHO KNOWS what kind of numbers to make the output
 of `system.time()` readable!  That's why I added this simple wrapper
 to get the wall-clock time in a readable format:
