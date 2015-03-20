@@ -1,7 +1,8 @@
 Package: merkhet
-Title: TODO
+Title: Time Utilities for R
 Version: 0.1
-Description: TODO
+Description: The name 'merkhet' is an ancient word for a kind of time-
+    keeping device, which means the 'instrument of knowing.'  
 License: BSD 2-clause License + file LICENSE
 Depends: R (>= 2.15.1)
 LinkingTo: RNACI
