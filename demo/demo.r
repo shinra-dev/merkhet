@@ -1,3 +1,5 @@
+library(merkhet)
+
 ### How long has your system been up (seconds since boot)?
 Sys.uptime()
 cat("\n")
