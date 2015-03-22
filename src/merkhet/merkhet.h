@@ -23,6 +23,11 @@
 
 
 typedef double runtime_t;
+typedef uint64_t microseconds_t;
+
+
+// microtime.c
+int merkhet_microtime_run(microseconds_t *time);
 
 // platform.c
 #if OS_LINUX
@@ -39,6 +44,9 @@ int merkhet_process_runtime(runtime_t *runtime);
 
 // sysinfo.c
 int merkhet_system_uptime(runtime_t *uptime);
+
+// warmup.c
+int merkhet_busy_loop(microseconds_t runlen);
 
 
 #endif

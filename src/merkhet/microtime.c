@@ -7,17 +7,18 @@
 #include "merkhet.h"
 
 
-typedef uint64_t microseconds_t;
-
 int merkhet_microtime_run(microseconds_t *time)
 {
   int ret = MERKHET_OK;
+  *time = 0;
   
   #if OS_LINUX
   struct timeval t;
   gettimeofday(&t, NULL);
   
   *time = (microseconds_t) t.tv_sec * 1000000 + t.tv_usec;
+  #else
+  return PLATFORM_ERROR;
   #endif
   
   return ret;

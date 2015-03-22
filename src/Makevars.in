@@ -8,9 +8,11 @@ PKG_LIBS = $(RNACI_LDFLAGS)
 
 
 MERKHET_OBJS = \
+		merkhet/microtime.o \
 		merkhet/platform.o \
 		merkhet/procinfo.o \
-		merkhet/sysinfo.o
+		merkhet/sysinfo.o \
+		merkhet/warmup.o
 
 R_OBJS   = wrappers.o
 
