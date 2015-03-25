@@ -1,6 +1,10 @@
 #' Merkhet:  Time-Related Utilities for R
 #' 
-#' TODO
+#' The merkhet package contains several time-related utilities for
+#' benchmarkers and those interested in performance.
+#' 
+#' The name 'merkhet' is an ancient word for a kind of time-keeping 
+#' device, which means the 'instrument of knowing.'
 #' 
 #' \tabular{ll}{ 
 #'    Package: \tab merkhet \cr 

@@ -5,9 +5,13 @@
 \alias{merkhet-package}
 \title{Merkhet:  Time-Related Utilities for R}
 \description{
-TODO
+The merkhet package contains several time-related utilities for
+benchmarkers and those interested in performance.
 }
 \details{
+The name 'merkhet' is an ancient word for a kind of time-keeping
+device, which means the 'instrument of knowing.'
+
 \tabular{ll}{
    Package: \tab merkhet \cr
    Type: \tab Package \cr
