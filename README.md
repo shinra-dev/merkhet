@@ -1,4 +1,14 @@
-# merkeht [![Build Status](https://travis-ci.org/shinra-dev/merkhet.png)](https://travis-ci.org/shinra-dev/merkhet) [![License](http://img.shields.io/badge/license-BSD%202--Clause-orange.svg?style=flat)](http://opensource.org/licenses/BSD-2-Clause)
+# merkeht 
+
+
+* **Version:** 0.2
+* **Status:** [![Build Status](https://travis-ci.org/shinra-dev/merkhet.png)](https://travis-ci.org/shinra-dev/merkhet)
+* **License:** [![License](http://img.shields.io/badge/license-BSD%202--Clause-orange.svg?style=flat)](http://opensource.org/licenses/BSD-2-Clause)
+* **Author:** Drew Schmidt
+
+A "merkhet" is an ancient time-keeping device, which literally
+means "instrument of knowing".  The `merkhet` package offers
+some handy utilities for timings in R.
 
 
 ## Package Utilities
