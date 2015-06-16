@@ -26,7 +26,7 @@
 */
 
 
-#include <RNACI.h>
+#include "RNACI2.h"
 #include "merkhet/merkhet.h"
 
 
