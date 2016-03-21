@@ -1,6 +1,5 @@
 # merkeht 
 
-
 * **Version:** 0.2
 * **Status:** [![Build Status](https://travis-ci.org/shinra-dev/merkhet.png)](https://travis-ci.org/shinra-dev/merkhet)
 * **License:** [![License](http://img.shields.io/badge/license-BSD%202--Clause-orange.svg?style=flat)](http://opensource.org/licenses/BSD-2-Clause)
@@ -71,10 +70,4 @@ wc.time(Sys.sleep(123.4567))
 ```r
 devtools::install_github("wrathematics/merkhet")
 ```
-
-
-## Authors
-
-memuse is authored and maintained by:
-* Drew Schmidt
 
