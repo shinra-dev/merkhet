@@ -7,7 +7,7 @@ MERKHET_OBJS = \
 		merkhet/procinfo.o \
 		merkhet/sysinfo.o
 
-R_OBJS   = wrappers.o
+R_OBJS   = wrappers.o merkhet_native.o
 
 OBJECTS = $(MERKHET_OBJS) $(R_OBJS)
 
