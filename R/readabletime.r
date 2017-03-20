@@ -61,7 +61,9 @@ readable.time <- function(time, unit="seconds")
 
 
 
-#' @title Print readabletime objects.
+#' print.readabletime
+#' 
+#' Print readabletiem objects.
 #' 
 #' @param x 
 #' An readabletime object.
