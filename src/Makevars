@@ -3,11 +3,9 @@ PKG_CFLAGS = -w
 
 
 MERKHET_OBJS = \
-		merkhet/microtime.o \
 		merkhet/platform.o \
 		merkhet/procinfo.o \
-		merkhet/sysinfo.o \
-		merkhet/warmup.o
+		merkhet/sysinfo.o
 
 R_OBJS   = wrappers.o
 
