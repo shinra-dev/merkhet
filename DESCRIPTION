@@ -9,3 +9,4 @@ NeedsCompilation: yes
 ByteCompile: yes
 Authors@R: person("Drew", "Schmidt", email="wrathematics@gmail.com", role=c("aut", "cre"))
 Maintainer: Drew Schmidt <wrathematics@gmail.com>
+RoxygenNote: 6.0.1
