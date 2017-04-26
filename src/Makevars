@@ -2,11 +2,9 @@ PKG_CPPFLAGS = -I../inst/RNACI
 
 
 MERKHET_OBJS = \
-		merkhet/microtime.o \
 		merkhet/platform.o \
 		merkhet/procinfo.o \
-		merkhet/sysinfo.o \
-		merkhet/warmup.o
+		merkhet/sysinfo.o
 
 R_OBJS   = wrappers.o merkhet_native.o
 

@@ -15,5 +15,5 @@
 \item{digits}{The (max) number of digits to display.}
 }
 \description{
-Print for readabletime objects.
+Print readabletiem objects.
 }

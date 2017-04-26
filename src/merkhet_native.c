@@ -5,10 +5,10 @@
 #include <R_ext/Rdynload.h>
 #include <stdlib.h>
 
-SEXP R_merkhet_system_uptime();
-SEXP R_merkhet_process_usrtime();
-SEXP R_merkhet_process_systime();
-SEXP R_merkhet_process_runtime();
+extern SEXP R_merkhet_process_runtime();
+extern SEXP R_merkhet_process_systime();
+extern SEXP R_merkhet_process_usrtime();
+extern SEXP R_merkhet_system_uptime();
 
 static const R_CallMethodDef CallEntries[] = {
   {"R_merkhet_process_runtime", (DL_FUNC) &R_merkhet_process_runtime, 0},
