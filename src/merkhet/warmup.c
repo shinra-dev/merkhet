@@ -12,7 +12,7 @@ static int busy_loop(uint32_t len)
   static volatile val = 0;
   
   for (i=0; i<len; i++)
-    val += rand();
+    val += 1.0; //rand();
   
   return val&1;
 }
