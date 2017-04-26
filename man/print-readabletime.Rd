@@ -3,7 +3,7 @@
 \name{print-readabletime}
 \alias{print-readabletime}
 \alias{print.readabletime}
-\title{Print readabletime objects.}
+\title{print.readabletime}
 \usage{
 \method{print}{readabletime}(x, ..., digits = 3)
 }
@@ -13,4 +13,7 @@
 \item{...}{Additional arguments (ignored).}
 
 \item{digits}{The (max) number of digits to display.}
+}
+\description{
+Print for readabletime objects.
 }

@@ -187,7 +187,9 @@ post.system.time <- function()
 title_case <- function(x) gsub(x, pattern="(^|[[:space:]])([[:alpha:]])", replacement="\\1\\U\\2", perl=TRUE)
 
 
-#' @title Print sysinfo objects.
+#' print.sysinfo
+#' 
+#' Print sysinfo objects.
 #' 
 #' @param x 
 #' An sysinfo object.
@@ -228,4 +230,3 @@ print.sysinfo <- function(x, ...)
   
   return(ret)
 }
-

@@ -3,7 +3,7 @@
 \name{print-sysinfo}
 \alias{print-sysinfo}
 \alias{print.sysinfo}
-\title{Print sysinfo objects.}
+\title{print.sysinfo}
 \usage{
 \method{print}{sysinfo}(x, ...)
 }
@@ -11,4 +11,7 @@
 \item{x}{An sysinfo object.}
 
 \item{...}{Additional arguments (ignored).}
+}
+\description{
+Print sysinfo objects.
 }

@@ -61,7 +61,9 @@ readable.time <- function(time, unit="seconds")
 
 
 
-#' @title Print readabletime objects.
+#' print.readabletime
+#' 
+#' Print for readabletime objects.
 #' 
 #' @param x 
 #' An readabletime object.
@@ -122,4 +124,3 @@ wc.time <- function(expr, gcFirst=TRUE)
   
   return( readable.time(time, unit="seconds") )
 }
-
