@@ -1,5 +1,3 @@
-PKG_CPPFLAGS = -I../inst/RNACI
-
 MERKHET_OBJS = \
 		merkhet/platform.o \
 		merkhet/procinfo.o \
