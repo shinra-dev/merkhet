@@ -30,19 +30,19 @@ int merkhet_process_usrtime(runtime_t *usr)
   *usr = 0.;
   
   
-  #if OS_LINUX
+#if OS_LINUX
   ret = read_proc_self_stat(usr, 14);
   chkret(ret, FAILURE);
   
   *usr = (runtime_t) *usr / sysconf(_SC_CLK_TCK);
-  #elif OS_MAC
+#elif OS_MAC
   struct task_thread_times_info info;
   mach_msg_type_number_t info_count = TASK_BASIC_INFO_COUNT;
   
   ret = task_info(mach_task_self(), TASK_THREAD_TIMES_INFO, (task_info_t)&info, &info_count);
   
   *usr = (runtime_t) info.user_time; // time_value_t
-  #elif OS_WINDOWS
+#elif OS_WINDOWS
   FILETIME create_ft, exit_ft, sys_ft, cpu_ft;
   ret = GetProcessTimes(GetCurrentProcess(), &create_ft, &exit_ft, &sys_ft, &cpu_ft); 
   winchkret(ret, FAILURE);
@@ -53,9 +53,9 @@ int merkhet_process_usrtime(runtime_t *usr)
   *usr = (runtime_t) usr_uli.QuadPart * 1e-7;
   
   return MERKHET_OK;
-  #else
+#else
   return PLATFORM_ERROR;
-  #endif
+#endif
   
   return ret;
 }
@@ -88,19 +88,19 @@ int merkhet_process_systime(runtime_t *sys)
   *sys = 0.;
   
   
-  #if OS_LINUX
+#if OS_LINUX
   ret = read_proc_self_stat(sys, 15);
   chkret(ret, FAILURE);
   
   *sys = (runtime_t) *sys / sysconf(_SC_CLK_TCK);
-  #elif OS_MAC
+#elif OS_MAC
   struct task_thread_times_info info;
   mach_msg_type_number_t info_count = TASK_BASIC_INFO_COUNT;
   
   ret = task_info(mach_task_self(), TASK_THREAD_TIMES_INFO, (task_info_t)&info, &info_count);
   
   *sys = (runtime_t) info.system_time;
-  #elif OS_WINDOWS
+#elif OS_WINDOWS
   FILETIME create_ft, exit_ft, sys_ft, cpu_ft;
   ret = GetProcessTimes(GetCurrentProcess(), &create_ft, &exit_ft, &sys_ft, &cpu_ft); 
   winchkret(ret, FAILURE);
@@ -111,9 +111,9 @@ int merkhet_process_systime(runtime_t *sys)
   *sys = (runtime_t) sys_uli.QuadPart * 1e-7;
   
   return MERKHET_OK;
-  #else
+#else
   return PLATFORM_ERROR;
-  #endif
+#endif
   
   return ret;
 }
@@ -143,7 +143,7 @@ int merkhet_process_runtime(runtime_t *runtime)
   *runtime = 0.;
   
   
-  #if OS_LINUX
+#if OS_LINUX
   // process runtime = system uptime - (time after boot process started in jiffies / clock ticks per cycle (HZ))
   runtime_t sys_uptime, proc_start_time;
   ret = merkhet_system_uptime(&sys_uptime);
@@ -153,7 +153,7 @@ int merkhet_process_runtime(runtime_t *runtime)
   chkret(ret, FAILURE);
   
   *runtime = (runtime_t) sys_uptime - (proc_start_time / sysconf(_SC_CLK_TCK));
-  #elif OS_WINDOWS
+#elif OS_WINDOWS
   // https://msdn.microsoft.com/en-us/library/windows/desktop/ms683223%28v=vs.85%29.aspx
   FILETIME create_ft, exit_ft, sys_ft, cpu_ft;
   ret = GetProcessTimes(GetCurrentProcess(), &create_ft, &exit_ft, &sys_ft, &cpu_ft); 
@@ -164,9 +164,9 @@ int merkhet_process_runtime(runtime_t *runtime)
   
   *runtime = FILETIMEdiff(&nowtime_ft, &create_ft);
   return MERKHET_OK;
-  #else
+#else
   return PLATFORM_ERROR;
-  #endif
+#endif
   
   return ret;
 }

@@ -13,8 +13,8 @@
 
 #define chkret(ret,val) if(ret)return(val)
 #if OS_WINDOWS
-// Windows.h functions return non-zero if successful IN SPITEFUL DEFIANCE OF THE FUCKING C STANDARD
-#define winchkret(ret,val) if(!ret)return(val)
+  // Windows.h functions return non-zero if successful IN SPITEFUL DEFIANCE OF THE FUCKING C STANDARD
+  #define winchkret(ret,val) if(!ret)return(val)
 #endif
 
 #define MERKHET_OK       0
@@ -28,10 +28,10 @@ typedef uint64_t microseconds_t;
 
 // platform.c
 #if OS_LINUX
-int read_proc_self_stat(runtime_t *val, const int n);
+  int read_proc_self_stat(runtime_t *val, const int n);
 #elif OS_WINDOWS
-void FILETIMEtoULI(FILETIME *ft, ULARGE_INTEGER *uli);
-runtime_t FILETIMEdiff(FILETIME *ft1, FILETIME *ft2);
+  void FILETIMEtoULI(FILETIME *ft, ULARGE_INTEGER *uli);
+  runtime_t FILETIMEdiff(FILETIME *ft1, FILETIME *ft2);
 #endif
 
 // procinfo.c

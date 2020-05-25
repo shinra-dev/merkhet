@@ -33,14 +33,14 @@ int merkhet_system_uptime(runtime_t *uptime)
   *uptime = 0.;
   
   
-  #if OS_LINUX
+#if OS_LINUX
   struct sysinfo info;
   ret = sysinfo(&info);
   
   chkret(ret, FAILURE);
   
   *uptime = (runtime_t) info.uptime;
-  #elif OS_WINDOWS
+#elif OS_WINDOWS
   ULONGLONG tc;
   
     #if defined(_WIN64)
@@ -50,7 +50,7 @@ int merkhet_system_uptime(runtime_t *uptime)
     #endif
   
   *uptime = (runtime_t) tc/1000;
-  #elif OS_MAC
+#elif OS_MAC
   // https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man3/sysctl.3.html
   time_t startdate, nowdate;
   struct timeval tv;
@@ -63,9 +63,9 @@ int merkhet_system_uptime(runtime_t *uptime)
   time(&nowdate);
   
   *uptime = (runtime_t) nowdate - startdate;
-  #else
+#else
   return PLATFORM_ERROR;
-  #endif
+#endif
   
   return ret;
 }
