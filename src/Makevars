@@ -1,7 +1,7 @@
 MERKHET_OBJS = \
-		merkhet/platform.o \
-		merkhet/procinfo.o \
-		merkhet/sysinfo.o
+	merkhet/platform.o \
+	merkhet/procinfo.o \
+	merkhet/sysinfo.o
 
 R_OBJS = merkhet_native.o wrappers.o
 
@@ -11,4 +11,4 @@ all: $(SHLIB)
 $(SHLIB): $(OBJECTS)
 
 clean:
-		@rm -rf *.o *.d *.so* *.dylib *.dll *.lib $(SHLIB) $(OBJECTS) $(ROBJECTS)
+	@rm -rf *.o *.d *.so* *.dylib *.dll *.lib $(SHLIB) $(OBJECTS) $(ROBJECTS)
