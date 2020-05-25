@@ -69,5 +69,3 @@ int merkhet_system_uptime(runtime_t *uptime)
   
   return ret;
 }
-
-

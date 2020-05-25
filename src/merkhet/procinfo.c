@@ -170,4 +170,3 @@ int merkhet_process_runtime(runtime_t *runtime)
   
   return ret;
 }
-
