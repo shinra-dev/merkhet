@@ -1,20 +1,16 @@
 PKG_CPPFLAGS = -I../inst/RNACI
 
-
 MERKHET_OBJS = \
 		merkhet/platform.o \
 		merkhet/procinfo.o \
 		merkhet/sysinfo.o
 
-R_OBJS   = wrappers.o merkhet_native.o
+R_OBJS = merkhet_native.o wrappers.o
 
 OBJECTS = $(MERKHET_OBJS) $(R_OBJS)
 
-### Start making here.
 all: $(SHLIB)
-
 $(SHLIB): $(OBJECTS)
 
 clean:
-		@rm -rf *.o *.d *.rc *.so* *.dylib *.dll *.a *.lib \
-				$(SHLIB) $(OBJECTS) $(ROBJECTS)
+		@rm -rf *.o *.d *.so* *.dylib *.dll *.lib $(SHLIB) $(OBJECTS) $(ROBJECTS)

@@ -1,15 +1,17 @@
 Package: merkhet
 Type: Package
 Title: Time Utilities for R
-Version: 0.2
+Version: 0.2-0
 Description: The name 'merkhet' is an ancient word for a kind of time-
     keeping device, which means the 'instrument of knowing.'
 License: BSD 2-clause License + file LICENSE
 Depends:
     R (>= 3.0.0)
-NeedsCompilation: yes
 ByteCompile: yes
-Authors@R: person("Drew", "Schmidt", email="wrathematics@gmail.com", role=c("aut", "cre"))
+Authors@R: c(
+    person("Drew", "Schmidt", role=c("aut", "cre"), email="wrathematics@gmail.com")
+    )
+Maintainer: Drew Schmidt <wrathematics@gmail.com>
 URL: https://github.com/shinra-dev/merkhet
 BugReports: https://github.com/shinra-dev/merkhet/issues
 Maintainer: Drew Schmidt <wrathematics@gmail.com>

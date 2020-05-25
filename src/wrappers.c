@@ -26,7 +26,7 @@
 */
 
 
-#include <RNACI.h>
+#include "RNACI/RNACI.h"
 #include "merkhet/merkhet.h"
 
 
@@ -105,4 +105,3 @@ SEXP R_merkhet_process_runtime()
   R_END;
   return runtime;
 }
-
