@@ -11,7 +11,7 @@
 
 int read_proc_self_stat(runtime_t *val, const int n)
 {
-  int i;
+  size_t i;
   int spaces = 0, last_space = 0;
   char *line = NULL;
   size_t linelen = 0;
@@ -73,4 +73,3 @@ runtime_t FILETIMEdiff(FILETIME *ft1, FILETIME *ft2)
 }
 
 #endif
-
