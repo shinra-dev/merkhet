@@ -11,13 +11,8 @@ post.system.time()
 A proc_time object (same as \code{system.time()}).
 }
 \description{
-Returns the user, kernel, and wallclock time that the current
-process has been active.  Like a kind of post-hoc \code{system.time()}.
-}
-\details{
-All of the C-level source code for these methods (in src/meminfo of the root
-directory of the memuse source tree) is licensed under the permissive
-2-Clause BSD license.
+Returns the user, kernel, and wallclock time that the current process has
+been active. Like a kind of post-hoc \code{system.time()}.
 }
 \examples{
 \dontrun{

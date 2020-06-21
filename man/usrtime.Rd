@@ -3,7 +3,6 @@
 \name{usrtime}
 \alias{usrtime}
 \alias{Sys.usrtime}
-\alias{usrtime}
 \alias{Sys.runtime}
 \title{usrtime}
 \usage{
@@ -17,21 +16,12 @@ A readabletime object.
 A readabletime object.
 }
 \description{
-Returns the amount of time, in human-readable units, the
-current process has been in user mode.
+Returns the amount of time in human-readable units that the current process
+has been in user mode.
 
-Returns the amount of time, in human-readable units, the
-current R process has been active (the wall-clock time of the
-process).
-}
-\details{
-All of the C-level source code for these methods (in src/meminfo of the root
-directory of the memuse source tree) is licensed under the permissive
-2-Clause BSD license.
-
-All of the C-level source code for these methods (in src/meminfo of the root
-directory of the memuse source tree) is licensed under the permissive
-2-Clause BSD license.
+Returns the amount of time to the nearest second in human-readable units that
+the current R process has been active, i.e. the wall-clock time of the
+process.
 }
 \examples{
 \dontrun{

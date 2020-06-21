@@ -11,13 +11,8 @@ Sys.uptime()
 A readabletime object.
 }
 \description{
-Returns the amount of time, in human-readable units, since
-the system was booted.
-}
-\details{
-All of the C-level source code for these methods (in src/meminfo of the root
-directory of the memuse source tree) is licensed under the permissive
-2-Clause BSD license.
+Returns the amount of time to the nearest second in human-readable units
+since the system was booted.
 }
 \examples{
 \dontrun{

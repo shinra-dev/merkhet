@@ -11,13 +11,8 @@ Sys.systime()
 A readabletime object.
 }
 \description{
-Returns the amount of time, in human-readable units, the
-current process has been in kernel mode.
-}
-\details{
-All of the C-level source code for these methods (in src/meminfo of the root
-directory of the memuse source tree) is licensed under the permissive
-2-Clause BSD license.
+Returns the amount of time in human-readable units that the current process
+has been in kernel mode.
 }
 \examples{
 \dontrun{
