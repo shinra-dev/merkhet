@@ -153,6 +153,17 @@ int merkhet_process_runtime(runtime_t *runtime)
   chkret(ret, FAILURE);
   
   *runtime = (runtime_t) sys_uptime - (proc_start_time / sysconf(_SC_CLK_TCK));
+#elif OS_MAC
+  pid_t pid = getpid();
+  struct proc_bsdinfo info;
+  
+  int st = proc_pidinfo(pid, PROC_PIDTBSDINFO, 0, &info, PROC_PIDTBSDINFO_SIZE);
+  
+  if (st != PROC_PIDTBSDINFO_SIZE)
+    return FAILURE;
+  
+  uint64_t nixtime = time(NULL);
+  *runtime = (runtime_t) (nixtime - info.pbi_start_tvsec);
 #elif OS_WINDOWS
   // https://msdn.microsoft.com/en-us/library/windows/desktop/ms683223%28v=vs.85%29.aspx
   FILETIME create_ft, exit_ft, sys_ft, cpu_ft;

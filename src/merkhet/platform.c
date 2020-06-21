@@ -49,6 +49,14 @@ int read_proc_self_stat(runtime_t *val, const int n)
 
 
 
+#elif OS_MAC
+
+#include <unistd.h>
+
+
+
+
+
 #elif OS_WINDOWS
 
 void FILETIMEtoULI(FILETIME *ft, ULARGE_INTEGER *uli)

@@ -64,50 +64,50 @@
 
 #if OS_LINUX
 
-#include <sys/sysinfo.h>
+  #include <sys/sysinfo.h>
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
+  #include <unistd.h>
+  #include <stdlib.h>
+  #include <stdio.h>
+  #include <string.h>
 
 #elif OS_MAC
 
-#include <mach/vm_statistics.h>
-#include <mach/mach.h>
-#include <mach/mach_types.h>
-#include <mach/mach_init.h>
-#include <mach/mach_host.h>
-#include <sys/types.h>
-#include <sys/sysctl.h>
-#include <sys/param.h>
-#include <sys/mount.h>
-
+  #include <mach/vm_statistics.h>
+  #include <mach/mach.h>
+  #include <mach/mach_types.h>
+  #include <mach/mach_init.h>
+  #include <mach/mach_host.h>
+  
+  #include <sys/types.h>
+  #include <sys/sysctl.h>
+  #include <sys/param.h>
+  #include <sys/mount.h>
+  #include <sys/proc_info.h>
+  
+  #include <libproc.h>
+  #include <unistd.h>
 
 #elif OS_WINDOWS
 
-#include <windows.h>
-#include <stdio.h>
-#include <tchar.h>
-#include <Psapi.h>
+  #include <windows.h>
+  #include <stdio.h>
+  #include <tchar.h>
+  #include <Psapi.h>
 
-typedef BOOL (WINAPI *LPFN_GLPI)(PSYSTEM_LOGICAL_PROCESSOR_INFORMATION, PDWORD);
-
+  typedef BOOL (WINAPI *LPFN_GLPI)(PSYSTEM_LOGICAL_PROCESSOR_INFORMATION, PDWORD);
 
 #elif OS_FREEBSD
 
-#include <unistd.h>
+  #include <unistd.h>
 
-#include <sys/types.h>
-#include <sys/sysctl.h>
-#include <vm/vm_param.h>
-
-
+  #include <sys/types.h>
+  #include <sys/sysctl.h>
+  #include <vm/vm_param.h>
 
 #elif OS_NIX
 
-#include <unistd.h>
+  #include <unistd.h>
 
 #endif
 
