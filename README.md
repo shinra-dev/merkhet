@@ -9,7 +9,23 @@ A "merkhet" is an ancient time-keeping device, which literally means "instrument
 
 
 
-#### Run Times
+## Installation
+
+<!-- You can install the stable version from [the HPCRAN](https://hpcran.org) using the usual `install.packages()`:
+
+```r
+install.packages("merkhet", repos="https://hpcran.org")
+``` -->
+
+The development version is maintained on GitHub:
+
+```r
+remotes::install_github("shinra-dev/merkhet")
+```
+
+
+
+## Special Timers
 
 System uptime:
 
@@ -51,13 +67,3 @@ wc.time(Sys.sleep(12.34567))
 wc.time(Sys.sleep(123.4567))
 # 2.059 minutes
 ```
-
-
-
-
-## Installation
-
-```r
-devtools::install_github("wrathematics/merkhet")
-```
-
