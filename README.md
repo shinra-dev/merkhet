@@ -38,7 +38,7 @@ There are also some utilities for seeing how long the current R process has been
 
 ```r
 Sys.runtime()
-# 10.34 seconds 
+# 10 seconds 
 Sys.usrtime()
 # 0.39 seconds 
 Sys.systime()
@@ -50,7 +50,7 @@ These three utilities combined allow you to do something akin to a post-hoc `sys
 ```r
 post.system.time()
 #    user  system elapsed 
-#    0.42    0.38   17.34 
+#    0.42    0.38   17.00
 ```
 
 
