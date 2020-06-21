@@ -11,11 +11,11 @@ A "merkhet" is an ancient time-keeping device, which literally means "instrument
 
 ## Installation
 
-<!-- You can install the stable version from [the HPCRAN](https://hpcran.org) using the usual `install.packages()`:
+You can install the stable version from [the HPCRAN](https://hpcran.org) using the usual `install.packages()`:
 
 ```r
 install.packages("merkhet", repos="https://hpcran.org")
-``` -->
+```
 
 The development version is maintained on GitHub:
 
