@@ -57,6 +57,8 @@ post.system.time()
 
 ## Readable Timings
 
+The `wc.time()` function is a simple wrapper around `system.time()` to measure the wallclock time with the output in a hunman-readable time:
+
 ```r
 wc.time(1+1)
 # 0 seconds
@@ -66,4 +68,17 @@ wc.time(Sys.sleep(12.34567))
  
 wc.time(Sys.sleep(123.4567))
 # 2.059 minutes
+```
+
+You can also take a time and convert it to a human-readable time using `readable.time()`
+
+```r
+readable.time(500)
+## 8.333 minutes 
+readable.time(5000)
+## 1.389 hours 
+readable.time(50000)
+## 13.889 hours 
+readable.time(500000)
+## 5.787 days 
 ```
