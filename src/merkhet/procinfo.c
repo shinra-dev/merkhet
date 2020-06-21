@@ -41,7 +41,7 @@ int merkhet_process_usrtime(runtime_t *usr)
   
   ret = task_info(mach_task_self(), TASK_THREAD_TIMES_INFO, (task_info_t)&info, &info_count);
   
-  *usr = (runtime_t) info.user_time; // time_value_t
+  *usr = (runtime_t) info.user_time.seconds;
 #elif OS_WINDOWS
   FILETIME create_ft, exit_ft, sys_ft, cpu_ft;
   ret = GetProcessTimes(GetCurrentProcess(), &create_ft, &exit_ft, &sys_ft, &cpu_ft); 
@@ -99,7 +99,7 @@ int merkhet_process_systime(runtime_t *sys)
   
   ret = task_info(mach_task_self(), TASK_THREAD_TIMES_INFO, (task_info_t)&info, &info_count);
   
-  *sys = (runtime_t) info.system_time;
+  *sys = (runtime_t) info.system_time.seconds;
 #elif OS_WINDOWS
   FILETIME create_ft, exit_ft, sys_ft, cpu_ft;
   ret = GetProcessTimes(GetCurrentProcess(), &create_ft, &exit_ft, &sys_ft, &cpu_ft); 
