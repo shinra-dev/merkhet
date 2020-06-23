@@ -1,8 +1,13 @@
-Release 0.2:
-  * * Switched to a header-only RNACI.
-  * Registered native routines.
+Release 0.3-0:
+  * Cleaned up some internals.
+  * Fix installation documentation issue.
+  * No longer round in Sys.usrtime() and Sys.systime().
 
-Release 0.1:
+Release 0.2-0:
+  * Switched to a header-only RNACI.
+  * Registered native routines.
+  * Fixed various time lookups for Mac.
+
+Release 0.1-0:
   * Added uptime checker.
   * Added process run, user, and kernel time checker.
-
