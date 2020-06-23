@@ -21,6 +21,7 @@ checkret = function(ret)
 #' Sys.uptime()
 #' }
 #' 
+#' @useDynLib merkhet R_merkhet_system_uptime
 #' @name uptime
 #' @rdname uptime
 #' @export
@@ -48,6 +49,7 @@ Sys.uptime = function()
 #' Sys.usrtime()
 #' }
 #' 
+#' @useDynLib merkhet R_merkhet_process_usrtime
 #' @name usrtime
 #' @rdname usrtime
 #' @export
@@ -75,6 +77,7 @@ Sys.usrtime = function()
 #' Sys.systime()
 #' }
 #' 
+#' @useDynLib merkhet R_merkhet_process_systime
 #' @name systime
 #' @rdname systime
 #' @export
@@ -103,6 +106,7 @@ Sys.systime = function()
 #' Sys.runtime()
 #' }
 #' 
+#' @useDynLib merkhet R_merkhet_process_runtime
 #' @name usrtime
 #' @rdname usrtime
 #' @export
