@@ -57,7 +57,7 @@ Sys.usrtime = function()
 {
   ret = .Call(R_merkhet_process_usrtime)
   checkret(ret)
-  readable.time(round(ret, 0))
+  readable.time(ret)
 }
 
 
@@ -85,7 +85,7 @@ Sys.systime = function()
 {
   ret = .Call(R_merkhet_process_systime)
   checkret(ret)
-  readable.time(round(ret, 0))
+  readable.time(ret)
 }
 
 
