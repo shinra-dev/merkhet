@@ -1,6 +1,6 @@
 # merkeht 
 
-* **Version:** 0.2-0
+* **Version:** 0.3-0
 * **License:** [BSD 2-Clause](http://opensource.org/licenses/BSD-2-Clause)
 * **Project home**: https://github.com/shinra-dev/merkhet
 * **Bug reports**: https://github.com/shinra-dev/merkhet/issues

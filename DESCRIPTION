@@ -1,7 +1,7 @@
 Package: merkhet
 Type: Package
 Title: Time Utilities for R
-Version: 0.2-0
+Version: 0.3-0
 Description: The name 'merkhet' is an ancient word for a kind of time-
     keeping device, which means the 'instrument of knowing.'
 License: BSD 2-clause License + file LICENSE
