@@ -5,7 +5,7 @@
 * **Project home**: https://github.com/shinra-dev/merkhet
 * **Bug reports**: https://github.com/shinra-dev/merkhet/issues
 
-A "merkhet" is an ancient time-keeping device, which literally means "instrument of knowing".  The `merkhet` package offers some handy utilities for timings in R.
+The name "merkhet" is an ancient word for a kind of timekeeping device, which means the "instrument of knowing." The package contains several timing utilities useful for benchmarking and performance monitoring.
 
 
 

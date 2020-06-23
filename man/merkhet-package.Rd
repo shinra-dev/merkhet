@@ -3,15 +3,14 @@
 \docType{package}
 \name{merkhet-package}
 \alias{merkhet-package}
-\title{Merkhet:  Time-Related Utilities for R}
+\title{Merkhet:  Time Utilities for R}
 \description{
-The merkhet package contains several time-related utilities for
-benchmarkers and those interested in performance.
+The name 'merkhet' is an ancient word for a kind of timekeeping
+device, which means the "instrument of knowing." The package contains
+several timing utilities useful for 'benchmarking' and performance
+monitoring.
 }
 \details{
-The name 'merkhet' is an ancient word for a kind of time-keeping 
-device, which means the 'instrument of knowing.'
-
 \tabular{ll}{ 
    Package: \tab merkhet \cr 
    Type: \tab Package \cr 
