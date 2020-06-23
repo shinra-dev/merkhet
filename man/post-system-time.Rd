@@ -11,8 +11,12 @@ post.system.time()
 A proc_time object (same as \code{system.time()}).
 }
 \description{
-Returns the user, kernel, and wallclock time that the current process has
-been active. Like a kind of post-hoc \code{system.time()}.
+Returns the user, system (kernel), and wallclock time that the current
+process has been active. Like a kind of post-hoc \code{system.time()}.
+}
+\details{
+If any of the user, system, or elapsed process times are unsupported on a
+given platform, then the value will be \code{NA}.
 }
 \examples{
 \dontrun{

@@ -121,8 +121,11 @@ Sys.runtime = function()
 
 #' post.system.time
 #' 
-#' Returns the user, kernel, and wallclock time that the current process has
-#' been active. Like a kind of post-hoc \code{system.time()}.
+#' Returns the user, system (kernel), and wallclock time that the current
+#' process has been active. Like a kind of post-hoc \code{system.time()}.
+#' 
+#' If any of the user, system, or elapsed process times are unsupported on a
+#' given platform, then the value will be \code{NA}.
 #' 
 #' @return 
 #' A proc_time object (same as \code{system.time()}).
@@ -139,9 +142,9 @@ Sys.runtime = function()
 #' @export
 post.system.time = function()
 {
-  usr = .Call(R_merkhet_process_usrtime)
-  sys = .Call(R_merkhet_process_systime)
-  elapsed = round(.Call(R_merkhet_process_runtime), 0)
+  usr = tryCatch(Sys.usrtime(), error=function(e) NA)
+  sys = tryCatch(Sys.systime(), error=function(e) NA)
+  elapsed = tryCatch(Sys.runtime(), error=function(e) NA)
   
   ret = c(usr, sys, elapsed)
   names(ret) = c("user.self", "sys.self", "elapsed")
