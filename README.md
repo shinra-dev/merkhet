@@ -82,3 +82,43 @@ readable.time(50000)
 readable.time(500000)
 ## 5.787 days 
 ```
+
+
+
+## Benchmarking
+
+The package also includes a simple benchmarking wrapper around `system.time()`. It uses an R6 class so you can add timed expressions iteratively, each with different numbers of replications.
+
+```r
+library(merkhet)
+
+b = bench()
+
+b$time(Sys.sleep(.3), reps=2)
+b
+## ## Benchmark of 1 operations
+##                elapsed reps    avg relative
+## Sys.sleep(0.3)   0.301    2 0.1505        1
+
+b$time(Sys.sleep(.5))
+b
+## ## Benchmark of 2 operations
+##                elapsed reps    avg relative
+## Sys.sleep(0.3)   0.301    2 0.1505     1.00
+## Sys.sleep(0.5)   0.501    1 0.5010     1.66
+```
+
+There is also an option to dump the data to csv (file or stdout):
+
+```r
+b$csv()
+## expr,elapsed,reps,avg,relative
+## "Sys.sleep(0.3)",0.301,2,0.1505,1
+## "Sys.sleep(0.5)",0.501,1,0.501,1.66
+```
+
+as well as make simple boxplots
+
+```r
+b$plot()
+```
