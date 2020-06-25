@@ -235,7 +235,7 @@ benchR6 = R6::R6Class("bench",
 #' Constructor for bench objects.
 #' 
 #' @param header Printer header. A string or \code{NULL} to ignore.
-#' #' @param flops An optional numeric argument specifying the number of
+#' @param flops An optional numeric argument specifying the number of
 #' floating point operations for all timed operations.
 #' 
 #' @return A bench class object.

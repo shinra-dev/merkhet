@@ -8,8 +8,9 @@
 bench(header = NULL, flops = NULL)
 }
 \arguments{
-\item{header}{Printer header. A string or \code{NULL} to ignore.
-#' @param flops An optional numeric argument specifying the number of
+\item{header}{Printer header. A string or \code{NULL} to ignore.}
+
+\item{flops}{An optional numeric argument specifying the number of
 floating point operations for all timed operations.}
 }
 \value{
