@@ -10,12 +10,15 @@ benchR6 = R6::R6Class("bench",
   public = list(
     #' @details
     #' Class initializer.
-    #' @param env Environment to execute expressions in.
-    initialize = function(env=parent.frame())
+    #' @param header Printer header. A string or \code{NULL} to ignore.
+    #' @param flops An optional numeric argument specifying the number of
+    #' floating point operations for all timed operations.
+    initialize = function(header=NULL, flops=NULL)
     {
-      private$reps = integer(0)
-      private$env = env
+      private$header = header
+      private$flops = flops
       
+      private$reps = integer(0)
       private$names = character()
       private$elapsed = numeric(0)
       private$n = 0
@@ -27,7 +30,8 @@ benchR6 = R6::R6Class("bench",
     #' @param expr Expression to time.
     #' @param reps Number of replications for each expression.
     #' @param name Optional name for the timed expression.
-    time = function(expr, reps=1, name=NULL)
+    #' @param env Environment where expression will be executed.
+    time = function(expr, reps=1, name=NULL, env=parent.frame())
     {
       private$n = private$n + 1
       private$reps = c(private$reps, as.integer(reps))
@@ -39,7 +43,7 @@ benchR6 = R6::R6Class("bench",
       
       t = 0
       for (rep in 1:reps)
-        t = t + system.time(eval(expr, envir=private$env))[3]
+        t = t + system.time(eval(expr, envir=env))[3]
       
       private$elapsed = c(private$elapsed, t)
       
@@ -52,7 +56,8 @@ benchR6 = R6::R6Class("bench",
     #' Print current benchmark information.
     print = function()
     {
-      cat("## Benchmark of", private$n, "operations\n")
+      if (!is.null(private$header))
+        cat(paste("##", private$header, "\n"))
       
       if (private$n > 0)
         print(private$get_table())
@@ -60,6 +65,18 @@ benchR6 = R6::R6Class("bench",
       cat("\n")
       
       invisible(self)
+    },
+    
+    
+    
+    #' @details
+    #' Returns a table of the benchmark data.
+    table = function()
+    {
+      tbl = as.data.frame(private$get_table())
+      tbl = cbind(operation=factor(rownames(tbl)), tbl)
+      rownames(tbl) = NULL
+      tbl
     },
     
     
@@ -119,9 +136,31 @@ benchR6 = R6::R6Class("bench",
     
     
     #' @details
-    #' Show a histogram of the benchmarks table.
-    #' @param ... Additional arguments to \code{barplot()}.
+    #' Show a line plot of the benchmarks table.
+    #' @param ... Additional arguments to \code{plot()}.
     plot = function(...)
+    {
+      if (private$n == 0)
+      {
+        barplot(height=0)
+        return(invisible(self))
+      }
+      
+      x = factor(private$names)
+      y = private$elapsed / private$reps
+      
+      plot(x, y, ylab="Average Runtime (seconds)", ...)
+      lines(y)
+      
+      invisible(self)
+    },
+    
+    
+    
+    #' @details
+    #' Show a barplot of the benchmarks table.
+    #' @param ... Additional arguments to \code{barplot()}.
+    barplot = function(...)
     {
       if (private$n == 0)
       {
@@ -145,8 +184,9 @@ benchR6 = R6::R6Class("bench",
 
 
   private = list(
+    header = NULL,
+    flops = NULL,
     reps = NULL,
-    env = NULL,
     elapsed = NULL,
     names = NULL,
     n = NULL,
@@ -194,7 +234,9 @@ benchR6 = R6::R6Class("bench",
 #' 
 #' Constructor for bench objects.
 #' 
-#' @param env Environment to execute expressions in.
+#' @param header Printer header. A string or \code{NULL} to ignore.
+#' #' @param flops An optional numeric argument specifying the number of
+#' floating point operations for all timed operations.
 #' 
 #' @return A bench class object.
 #' 
@@ -212,7 +254,7 @@ benchR6 = R6::R6Class("bench",
 #' 
 #' @rdname bench
 #' @export
-bench = function(env=parent.frame())
+bench = function(header=NULL, flops=NULL)
 {
-  benchR6$new(env=env)
+  benchR6$new(header=header, flops=flops)
 }

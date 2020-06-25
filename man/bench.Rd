@@ -5,10 +5,12 @@
 \alias{benchR6}
 \title{bench class}
 \usage{
-bench(env = parent.frame())
+bench(header = NULL, flops = NULL)
 }
 \arguments{
-\item{env}{Environment to execute expressions in.}
+\item{header}{Printer header. A string or \code{NULL} to ignore.
+#' @param flops An optional numeric argument specifying the number of
+floating point operations for all timed operations.}
 }
 \value{
 A bench class object.
@@ -37,8 +39,10 @@ b$csv()
 \item \href{#method-new}{\code{benchR6$new()}}
 \item \href{#method-time}{\code{benchR6$time()}}
 \item \href{#method-print}{\code{benchR6$print()}}
+\item \href{#method-table}{\code{benchR6$table()}}
 \item \href{#method-csv}{\code{benchR6$csv()}}
 \item \href{#method-plot}{\code{benchR6$plot()}}
+\item \href{#method-barplot}{\code{benchR6$barplot()}}
 \item \href{#method-clone}{\code{benchR6$clone()}}
 }
 }
@@ -47,13 +51,16 @@ b$csv()
 \if{latex}{\out{\hypertarget{method-new}{}}}
 \subsection{Method \code{new()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{benchR6$new(env = parent.frame())}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{benchR6$new(header = NULL, flops = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{env}}{Environment to execute expressions in.}
+\item{\code{header}}{Printer header. A string or \code{NULL} to ignore.}
+
+\item{\code{flops}}{An optional numeric argument specifying the number of
+floating point operations for all timed operations.}
 }
 \if{html}{\out{</div>}}
 }
@@ -67,7 +74,7 @@ Class initializer.
 \if{latex}{\out{\hypertarget{method-time}{}}}
 \subsection{Method \code{time()}}{
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{benchR6$time(expr, reps = 1, name = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{benchR6$time(expr, reps = 1, name = NULL, env = parent.frame())}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -78,6 +85,8 @@ Class initializer.
 \item{\code{reps}}{Number of replications for each expression.}
 
 \item{\code{name}}{Optional name for the timed expression.}
+
+\item{\code{env}}{Environment where expression will be executed.}
 }
 \if{html}{\out{</div>}}
 }
@@ -96,6 +105,19 @@ Time an expression using \code{system.time()}.
 
 \subsection{Details}{
 Print current benchmark information.
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-table"></a>}}
+\if{latex}{\out{\hypertarget{method-table}{}}}
+\subsection{Method \code{table()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{benchR6$table()}\if{html}{\out{</div>}}
+}
+
+\subsection{Details}{
+Returns a table of the benchmark data.
 }
 
 }
@@ -134,12 +156,32 @@ Prints the benchmark table as a csv.
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
+\item{\code{...}}{Additional arguments to \code{plot()}.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Details}{
+Show a line plot of the benchmarks table.
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-barplot"></a>}}
+\if{latex}{\out{\hypertarget{method-barplot}{}}}
+\subsection{Method \code{barplot()}}{
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{benchR6$barplot(...)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
 \item{\code{...}}{Additional arguments to \code{barplot()}.}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Details}{
-Show a histogram of the benchmarks table.
+Show a barplot of the benchmarks table.
 }
 
 }
