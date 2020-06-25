@@ -204,7 +204,16 @@ benchR6 = R6::R6Class("bench",
       
       relative = round(private$elapsed / m, 2)
       tbl = cbind(private$elapsed, private$reps, avg, relative)
-      colnames(tbl) = private$get_colnames()
+      cn = private$get_colnames()
+      
+      if (!is.null(private$flops))
+      {
+        flops = private$flops / avg / 1000^3
+        tbl = cbind(tbl, flops)
+        cn = c(cn, "gflops")
+      }
+      
+      colnames(tbl) = cn
       rownames(tbl) = private$names
       
       tbl
