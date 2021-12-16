@@ -1,14 +1,14 @@
 Package: merkhet
 Type: Package
 Title: Time Utilities for R
-Version: 0.3-0
+Version: 0.3-1
 Description: The name 'merkhet' is an ancient word for a kind of timekeeping
     device, which means the "instrument of knowing." The package contains
     several timing utilities useful for 'benchmarking' and performance
     monitoring.
 License: BSD 2-clause License + file LICENSE
 Depends:
-    R (>= 3.0.0)
+    R (>= 3.6.0)
 Imports:
     R6 (>= 2.4.1)
 ByteCompile: yes
@@ -16,5 +16,5 @@ Authors@R: person("Drew", "Schmidt", role=c("aut", "cre"), email="wrathematics@g
 Maintainer: Drew Schmidt <wrathematics@gmail.com>
 URL: https://github.com/shinra-dev/merkhet
 BugReports: https://github.com/shinra-dev/merkhet/issues
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 HPCRAN: benchmark

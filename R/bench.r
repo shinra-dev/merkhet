@@ -23,8 +23,9 @@ benchR6 = R6::R6Class("bench",
       private$elapsed = numeric(0)
       private$n = 0
     },
-
-
+    
+    
+    
     #' @details
     #' Time an expression using \code{system.time()}.
     #' @param expr Expression to time.
@@ -36,6 +37,8 @@ benchR6 = R6::R6Class("bench",
       private$n = private$n + 1
       private$reps = c(private$reps, as.integer(reps))
       
+      expr_subs = substitute(expr)
+      
       if (is.null(name))
         name = deparse(substitute(expr))
       
@@ -43,15 +46,15 @@ benchR6 = R6::R6Class("bench",
       
       t = 0
       for (rep in 1:reps)
-        t = t + system.time(eval(expr, envir=env))[3]
+        t = t + system.time(eval(expr_subs, envir=env))[3]
       
       private$elapsed = c(private$elapsed, t)
       
       invisible(self)
     },
-
-
-
+    
+    
+    
     #' @details
     #' Print current benchmark information.
     print = function()
@@ -180,9 +183,9 @@ benchR6 = R6::R6Class("bench",
       invisible(self)
     }
   ),
-
-
-
+  
+  
+  
   private = list(
     header = NULL,
     flops = NULL,

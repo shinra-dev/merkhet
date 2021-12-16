@@ -1,6 +1,6 @@
 # merkeht 
 
-* **Version:** 0.3-0
+* **Version:** 0.3-1
 * **License:** [BSD 2-Clause](http://opensource.org/licenses/BSD-2-Clause)
 * **Project home**: https://github.com/shinra-dev/merkhet
 * **Bug reports**: https://github.com/shinra-dev/merkhet/issues
@@ -98,14 +98,14 @@ b$time(Sys.sleep(.3), reps=2)
 b
 ## ## Benchmark of 1 operations
 ##                elapsed reps    avg relative
-## Sys.sleep(0.3)   0.301    2 0.1505        1
+## Sys.sleep(0.3)     0.6    2 0.3        1
 
 b$time(Sys.sleep(.5))
 b
 ## ## Benchmark of 2 operations
 ##                elapsed reps    avg relative
-## Sys.sleep(0.3)   0.301    2 0.1505     1.00
-## Sys.sleep(0.5)   0.501    1 0.5010     1.66
+## Sys.sleep(0.3)     0.6    2 0.3      1.2
+## Sys.sleep(0.5)     0.5    1 0.5      1.0
 ```
 
 There is also an option to dump the data to csv (file or stdout):
@@ -113,8 +113,8 @@ There is also an option to dump the data to csv (file or stdout):
 ```r
 b$csv()
 ## expr,elapsed,reps,avg,relative
-## "Sys.sleep(0.3)",0.301,2,0.1505,1
-## "Sys.sleep(0.5)",0.501,1,0.501,1.66
+## "Sys.sleep(0.3)",0.6,2,0.3,1.2
+## "Sys.sleep(0.5)",0.5,1,0.5,1
 ```
 
 as well as make simple boxplots
